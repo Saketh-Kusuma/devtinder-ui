@@ -112,19 +112,9 @@ const Login = () => {
                 required
                 value={password}
                 placeholder="Password"
-                minLength={6}
                 onChange={(e) => setPassword(e.target.value)}
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                title="Must be more than 6 characters, including number, lowercase letter, uppercase letter"
               />
             </label>
-            <p className="validator-hint hidden">
-              Must be more than 6 characters, including
-              <br />
-              At least one number <br />
-              At least one lowercase letter <br />
-              At least one uppercase letter
-            </p>
             <div className="card-actions flex-col items-center justify-center">
               <button className="btn btn-primary">Login</button>
             <div cla><p>New User? <Link to="/signup" style={{textDecoration:"underline"}}>Signup</Link></p></div>
