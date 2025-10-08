@@ -26,7 +26,7 @@ useEffect(()=>{getConnections()},[])
       <h1 className="text-3xl my-4 text-center font-bold underline">Connections</h1>
       {connections && connections.length > 0 ? (
         connections.map((connection) => (
-          <ConnectionCard user={connection} key={connection._id} />
+          <ConnectionCard user={connection===null?"":connection} />
         ))
       ) : (
         <p>No connections found.</p>

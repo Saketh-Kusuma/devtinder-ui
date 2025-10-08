@@ -4,9 +4,10 @@ import { constants } from "../utils/constants";
 function ConnectionCard({
   user,
 }) {
-    const { firstName, lastName, age, gender, about, photoUrl } = user;
+    const { firstName, lastName, age, gender, about, photoUrl } = user || "";
   return (
-    <div className="flex items-center justify-center p-2 my-2 md:w-1/2 md:p-0 overflow-y-hidden">
+    <Activity mode={user===""?"hidden":"visible"}>
+      <div className="flex items-center justify-center p-2 my-2 md:w-1/2 md:p-0 overflow-y-hidden">
       <div className="card w-full min-w-xs flex flex-row bg-base-300 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-200">
         {/* Image Section */}
         <figure className="relative aspect-square overflow-hidden">
@@ -22,7 +23,7 @@ function ConnectionCard({
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <h2 className="text-xl font-semibold mb-1">
-                {firstName} {lastName}
+                {firstName||""} {lastName||""}
               </h2>
               <Activity mode={gender?"visible":"hidden"}>
                 <div className="flex items-center gap-3 text-sm mb-3">
@@ -40,12 +41,13 @@ function ConnectionCard({
           </div>
 
           <p className="text-sm leading-relaxed mb-4 line-clamp-3">
-            {about}
+            {about||""}
           </p>
          
         </div>
       </div>
     </div>
+    </Activity>
   );
 }
 
