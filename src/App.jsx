@@ -9,6 +9,11 @@ import Feed from "./pages/Feed";
 import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
 import SignUp from "./pages/SignUp";
+import { TermsConditions } from "./pages/TermsAndConditions";
+import { CancellationRefunds } from "./pages/CancellationAndRefund";
+import { ContactUs } from "./pages/ContactUs";
+import { Privacy } from "./pages/Privacy";
+import { Shipping } from "./pages/Shipping";
 function App() {
   return (
     <>
@@ -22,6 +27,11 @@ function App() {
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/termsAndConditions" element={<TermsConditions/>} />
+              <Route path="/cancellationAndRefundPolicy" element={<CancellationRefunds/>} />
+              <Route path= "/contactUs" element={<ContactUs />} />
+              <Route path="/privacyPolicy" element={<Privacy />} />
+              <Route path="/shipping" element={<Shipping/>} />
             </Route>
           </Routes>
         </BrowserRouter>
